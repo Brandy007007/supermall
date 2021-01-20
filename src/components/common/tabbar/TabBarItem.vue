@@ -51,7 +51,7 @@ export default {
   font-size: 10px;
   /* line-height: 49px; */
 }
-img {
+.tab-bar-item img {
   width: 23px;
   height: 23px;
   margin-top: 3px;
