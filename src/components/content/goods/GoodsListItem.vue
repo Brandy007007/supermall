@@ -1,7 +1,7 @@
 <template>
-  <div class="goodslistitem" >
-    <a href="">
-      <img :src="goodsItem.show.img" alt=""  @load="imageLoad"/>
+  <div class="goodslistitem" @click="itemClick">
+    <a href="javascript:;">
+      <img v-lazy="showImage" alt="" @load="imageLoad" />
     </a>
     <div class="goods-info">
       <p class="desc">{{ goodsItem.title }}</p>
@@ -22,12 +22,25 @@ export default {
       },
     },
   },
+  computed: {
+    showImage() {
+      return this.goodsItem.image || this.goodsItem.show.img;
+    },
+  },
   methods: {
-      imageLoad(){
-        //   console.log('imageLoad');
-        this.$bus.$emit('itemImageLoad')
+    imageLoad() {
+      if(this.$route.path.indexOf('/home')){
+        this.$bus.$emit("homeItemImageLoad");
+      }else if(this.$route.path.indexOf('/detail')){
+        this.$bus.$emit('detailItemImgLoad')
       }
-  }
+      //   console.log('imageLoad');
+    },
+    itemClick() {
+      //   console.log("~~~");
+      this.$router.push("/detail/" + this.goodsItem.iid);
+    },
+  },
 };
 </script>
     

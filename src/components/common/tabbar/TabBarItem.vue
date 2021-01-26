@@ -35,9 +35,9 @@ export default {
   },
   methods: {
     itemClick() {
-      console.log("itemClick");
+      // console.log("itemClick");
       this.$router.push(this.path).catch((err) => err);
-      console.log(this.path);
+      // console.log(this.path);
     },
   },
 };
@@ -54,7 +54,7 @@ export default {
 .tab-bar-item img {
   width: 23px;
   height: 23px;
-  margin-top: 3px;
+  margin-top: 8px;
   vertical-align: middle;
 }
 /* .active {

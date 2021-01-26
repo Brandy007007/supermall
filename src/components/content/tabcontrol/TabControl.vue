@@ -3,7 +3,7 @@
     <div
       class="tabcitem"
       v-for="(item, index) in titles"
-      :key="item.index"
+      :key="index"
       :class="{ active: index === currentindex }"
       @click="itemclick(index)"
     >

@@ -6,7 +6,7 @@
       :goods-item="item"
     ></goods-list-item>
   </div>
-</template>2    
+</template>  
 
 <script>
 import GoodsListItem from "./GoodsListItem";
